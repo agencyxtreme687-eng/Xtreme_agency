@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&family=Space+Grotesk:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "Space Grotesk", ui-monospace, SFMono-Regular, monospace;
+  
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white selection:bg-red-600 selection:text-white antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+}
+
+@layer components {
+  .sporty-card {
+    @apply bg-[#111111] border border-white/5 rounded-3xl overflow-hidden transition-all duration-500 hover:border-red-600/50 hover:shadow-[0_0_40px_-15px_rgba(220,38,38,0.3)];
+  }
+}
