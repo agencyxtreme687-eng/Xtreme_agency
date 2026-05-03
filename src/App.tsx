@@ -228,12 +228,12 @@ export default function App() {
         </section>
 
         {/* Categories Bar */}
-        <div className="flex overflow-x-auto no-scrollbar gap-4 lg:gap-12 mb-12 lg:mb-20 border-b border-white/5 pb-6 lg:pb-8">
+        <div className="flex overflow-x-auto no-scrollbar gap-2 lg:gap-12 mb-12 lg:mb-20 border-b border-white/5 pb-6 lg:pb-8 -mx-4 px-4 lg:mx-0 lg:px-0">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`text-[10px] lg:text-[11px] uppercase tracking-[0.2em] transition-all duration-300 relative py-2 px-4 rounded-full font-bold whitespace-nowrap ${
+              className={`text-[10px] lg:text-[11px] uppercase tracking-widest transition-all duration-300 relative py-2 px-6 lg:px-4 rounded-full font-bold whitespace-nowrap ${
                 activeCategory === cat 
                   ? 'text-white bg-red-600 shadow-[0_0_20px_-5px_rgba(220,38,38,0.5)]' 
                   : 'text-white/30 hover:text-white/60 hover:bg-white/5'
@@ -323,20 +323,20 @@ export default function App() {
                    </div>
                 </div>
 
-                <div className="flex-1 p-4 lg:p-6 pb-0 flex flex-col">
-                  <div className="text-[8px] lg:text-[10px] uppercase tracking-widest text-red-600 font-black mb-1 lg:mb-2">{product.category}</div>
-                  <h3 className="text-base lg:text-xl font-bold tracking-tight text-white mb-2 leading-tight font-display italic">
+                <div className="flex-1 p-3 lg:p-6 pb-0 flex flex-col">
+                  <div className="text-[7px] lg:text-[10px] uppercase tracking-widest text-red-600 font-black mb-1 lg:mb-2">{product.category}</div>
+                  <h3 className="text-sm lg:text-xl font-bold tracking-tight text-white mb-1 lg:mb-2 leading-tight font-display italic line-clamp-1 lg:line-clamp-none">
                     {product.name}
                   </h3>
-                  <p className="text-[11px] lg:text-sm font-medium text-white/40 line-clamp-2 leading-tight lg:leading-normal mb-4">
+                  <p className="text-[10px] lg:text-sm font-medium text-white/40 line-clamp-2 leading-tight lg:leading-normal mb-3 lg:mb-4">
                     {product.description}
                   </p>
                   
-                  <div className="mt-auto pt-4 border-t border-white/5 flex items-center justify-between">
-                    <span className="text-lg lg:text-2xl font-black tracking-tighter italic font-display">R$ {product.price.toFixed(0)}</span>
+                  <div className="mt-auto pt-3 lg:pt-4 border-t border-white/5 flex items-center justify-between gap-2">
+                    <span className="text-base lg:text-2xl font-black tracking-tighter italic font-display">R$ {product.price.toFixed(0)}</span>
                     <button 
                       onClick={() => addToCart(product)}
-                      className="lg:hidden text-[10px] font-black uppercase text-red-600 tracking-widest"
+                      className="lg:hidden text-[9px] font-black uppercase text-red-600 tracking-widest px-2 py-1 bg-white/5 rounded-md active:bg-white/10"
                     >
                       COMPRAR
                     </button>
